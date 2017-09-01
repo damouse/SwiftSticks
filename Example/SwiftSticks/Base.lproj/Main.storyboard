@@ -21,13 +21,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stn-WB-vhy" customClass="SKView">
-                                <rect key="frame" x="0.0" y="232" width="375" height="435"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOK-3f-u71" customClass="StickView" customModule="SwiftSticks">
+                                <rect key="frame" x="0.0" y="20" width="375" height="323.5"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stn-WB-vhy" customClass="SKView">
+                                <rect key="frame" x="0.0" y="343.5" width="375" height="323.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QOK-3f-u71" firstAttribute="width" secondItem="stn-WB-vhy" secondAttribute="width" id="5HN-ZY-YKL"/>
+                            <constraint firstItem="stn-WB-vhy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="G9w-S1-Bjv"/>
+                            <constraint firstAttribute="trailing" secondItem="stn-WB-vhy" secondAttribute="trailing" id="NqJ-8H-YFB"/>
+                            <constraint firstItem="QOK-3f-u71" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="exc-Sb-QXH"/>
+                            <constraint firstAttribute="trailing" secondItem="QOK-3f-u71" secondAttribute="trailing" id="jbH-M4-pf3"/>
+                            <constraint firstItem="QOK-3f-u71" firstAttribute="height" secondItem="stn-WB-vhy" secondAttribute="height" id="k8D-oS-mbN"/>
+                            <constraint firstItem="QOK-3f-u71" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="njf-8H-Vqp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="stn-WB-vhy" secondAttribute="bottom" id="oFk-wS-DL7"/>
+                            <constraint firstItem="stn-WB-vhy" firstAttribute="top" secondItem="QOK-3f-u71" secondAttribute="bottom" id="ysC-Pc-YZX"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="stickView" destination="stn-WB-vhy" id="TXf-Gj-v9h"/>
