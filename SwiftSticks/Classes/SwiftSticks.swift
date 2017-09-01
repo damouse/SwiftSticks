@@ -1,48 +1,40 @@
 //
-//  ViewController.swift
-//  SwiftSticks
+//  StickView.swift
+//  Pods
 //
-//  Created by Mickey Barboi on 09/01/2017.
-//  Copyright (c) 2017 Mickey Barboi. All rights reserved.
+//  Created by Mickey Barboi on 9/1/17.
+//
 //
 
+import Foundation
 import UIKit
-import SwiftSticks
 import SpriteKit
 
-/*
- Ok, what do we want here?
- 
- - UIView subclass that can be dropped onto the storyboard or instantiated programmatically-- no spritekit
- - Simple external programmable interface
- */
-class ViewController: UIViewController {
-    @IBOutlet weak var stickView: SKView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let scene = GameScene(size: stickView.bounds.size)
+public class StickView: SKView {
+//    private var skView: SKView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+//        skView = SKView(frame: frame)
+//        self.addSubview(skView)
+//         skView.bounds = self.bounds
+        
+        let scene = GameScene(size: self.bounds.size)
         scene.backgroundColor = .white
-        
-        stickView.showsFPS = true
-        stickView.showsNodeCount = true
-        stickView.ignoresSiblingOrder = true
-        stickView.presentScene(scene)
-        
+
+        showsFPS = true
+        showsNodeCount = true
+        ignoresSiblingOrder = true
+        presentScene(scene)
     }
     
-    override var shouldAutorotate : Bool {
-        return true
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask  {
-        return UIDevice.current.userInterfaceIdiom == .phone ? .allButUpsideDown : .all
-    }
-    
-    override var prefersStatusBarHidden : Bool {
-        return true
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
     }
 }
+
 
 class GameScene: SKScene {
     var appleNode: SKSpriteNode?
@@ -104,7 +96,7 @@ class GameScene: SKScene {
             aN.run(SKAction.rotate(byAngle: 3.6, duration: 0.5))
         }
         // MARK: Handlers end
-
+        
         joystickStickImageEnabled = true
         joystickSubstrateImageEnabled = true
         
