@@ -1,0 +1,6 @@
+framework module SwiftSticks {
+  umbrella header "SwiftSticks-umbrella.h"
+
+  export *
+  module * { export * }
+}
