@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 
+// Current usage: view.stick.
 public class StickView: SKView {
     var _scene: SKScene!
     

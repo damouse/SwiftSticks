@@ -1,29 +1,37 @@
 # SwiftSticks
 
-[![CI Status](http://img.shields.io/travis/Mickey Barboi/SwiftSticks.svg?style=flat)](https://travis-ci.org/Mickey Barboi/SwiftSticks)
-[![Version](https://img.shields.io/cocoapods/v/SwiftSticks.svg?style=flat)](http://cocoapods.org/pods/SwiftSticks)
-[![License](https://img.shields.io/cocoapods/l/SwiftSticks.svg?style=flat)](http://cocoapods.org/pods/SwiftSticks)
-[![Platform](https://img.shields.io/cocoapods/p/SwiftSticks.svg?style=flat)](http://cocoapods.org/pods/SwiftSticks)
+Analog joysticks for iOS written in Swift. 
 
-## Example
+This repository contains a sample app in addition to Cocoapod. To try out SwiftSticks quickly, clone this repository, run `pod install`, and run the app target. 
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Note: this project will undergo a lot of change in the near future.
 
-## Requirements
+## Setup
 
-## Installation
+For Cocoapods, add the following to your Podfile:
 
-SwiftSticks is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "SwiftSticks"
+```
+pod 'SwiftSticks'
 ```
 
-## Author
+Install with `pod install`.
 
-Mickey Barboi, mbarboi@lefthandrobotics.com
+## Usage
 
-## License
+There's one main class in this project, the `StickView`. Add it to your views in any of the usual ways-- add a `StickView` subclass in InterfaceBuilder, or create an instance programmatically: 
 
-SwiftSticks is available under the MIT license. See the LICENSE file for more info.
+```
+import SwiftSticks
+
+...
+
+// Abbreviated example
+let sticks = StickView(frame: someFrame)
+self.view.addSubview(sticks)
+```
+
+StickView documentation to follow.
+
+## Other
+
+Started as a fork of [this project](https://github.com/MitrophD/Swift-SpriteKit-Analog-Stick) by MitrophD.
