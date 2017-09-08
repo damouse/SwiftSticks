@@ -32,6 +32,13 @@ self.view.addSubview(sticks)
 
 StickView documentation to follow.
 
+
 ## Other
 
 Started as a fork of [this project](https://github.com/MitrophD/Swift-SpriteKit-Analog-Stick) by MitrophD.
+
+### TODO
+
+- Create an IBAction delegate for the stick views
+- Refactor the handlers appropriately
+- Add constraints between the stickview and the SKView to resize appropriately

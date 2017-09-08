@@ -112,25 +112,15 @@ open class AnalogJoystickComponent: SKSpriteNode {
     }
 }
 
-//MARK: - AnalogJoystickSubstrate
-open class AnalogJoystickSubstrate: AnalogJoystickComponent {
-    // coming soon...
-}
-
-//MARK: - AnalogJoystickStick
-open class AnalogJoystickStick: AnalogJoystickComponent {
-    // coming soon...
-}
-
 //MARK: - AnalogJoystick
 open class AnalogJoystick: SKNode {
     public var trackingHandler: ((AnalogJoystickData) -> ())?
     public var beginHandler: (() -> Void)?
     public var stopHandler: (() -> Void)?
-    public var substrate: AnalogJoystickSubstrate!
-    public var stick: AnalogJoystickStick!
-    private var tracking = false
-    private(set) var data = AnalogJoystickData()
+    public var substrate: AnalogJoystickComponent!
+    public var stick: AnalogJoystickComponent!
+    private(set) public var tracking = false
+    private(set) public var data = AnalogJoystickData()
     
     public var disabled: Bool {
         get {
@@ -167,7 +157,7 @@ open class AnalogJoystick: SKNode {
         }
     }
     
-    public init(substrate: AnalogJoystickSubstrate, stick: AnalogJoystickStick) {
+    public init(substrate: AnalogJoystickComponent, stick: AnalogJoystickComponent) {
         super.init()
         self.substrate = substrate
         substrate.zPosition = 0
@@ -186,8 +176,8 @@ open class AnalogJoystick: SKNode {
         let stickDiameter = diameters.stick ?? diameters.substrate * 0.6,
         jColors = colors ?? (substrate: nil, stick: nil),
         jImages = images ?? (substrate: nil, stick: nil),
-        substrate = AnalogJoystickSubstrate(diameter: diameters.substrate, color: jColors.substrate, image: jImages.substrate),
-        stick = AnalogJoystickStick(diameter: stickDiameter, color: jColors.stick, image: jImages.stick)
+        substrate = AnalogJoystickComponent(diameter: diameters.substrate, color: jColors.substrate, image: jImages.substrate),
+        stick = AnalogJoystickComponent(diameter: stickDiameter, color: jColors.stick, image: jImages.stick)
         self.init(substrate: substrate, stick: stick)
     }
     
@@ -221,9 +211,9 @@ open class AnalogJoystick: SKNode {
                 return
             }
             
-            let maxDistantion = substrate.radius,
-            realDistantion = sqrt(pow(location.x, 2) + pow(location.y, 2)),
-            needPosition = realDistantion <= maxDistantion ? CGPoint(x: location.x, y: location.y) : CGPoint(x: location.x / realDistantion * maxDistantion, y: location.y / realDistantion * maxDistantion)
+            let maxDistantion = substrate.diameter / 2
+            let realDistantion = sqrt(pow(location.x, 2) + pow(location.y, 2))
+            let needPosition = realDistantion <= maxDistantion ? CGPoint(x: location.x, y: location.y) : CGPoint(x: location.x / realDistantion * maxDistantion, y: location.y / realDistantion * maxDistantion)
             stick.position = needPosition
             data = AnalogJoystickData(velocity: needPosition, angular: -atan2(needPosition.x, needPosition.y))
         }

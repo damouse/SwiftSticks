@@ -17,18 +17,15 @@ import SpriteKit
  - Simple external programmable interface
  */
 class ViewController: UIViewController {
-    @IBOutlet weak var stickView: SKView!
+    @IBOutlet weak var stickView: StickView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let scene = GameScene(size: stickView.bounds.size)
-//        scene.backgroundColor = .white
-//        
-//        stickView.showsFPS = true
-//        stickView.showsNodeCount = true
-//        stickView.ignoresSiblingOrder = true
-//        stickView.presentScene(scene)
+        // Set tracking handlers
+        stickView.didMove = { (a: AnalogJoystickData) -> () in
+            print(a)
+        }
     }
     
     override var shouldAutorotate : Bool {

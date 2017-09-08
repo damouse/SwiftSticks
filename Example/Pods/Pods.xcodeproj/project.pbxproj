@@ -10,7 +10,7 @@
 		0FDFED2AF4C2BB816D03EC03F5C5BF72 /* Pods-SwiftSticks_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3331DD44ABF106E371D87F2B1A437B /* Pods-SwiftSticks_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1285BDC0F2E7843A738A4036410A0F48 /* Pods-SwiftSticks_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4283C35C22ED240FF5249F3B61807640 /* Pods-SwiftSticks_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ABAE77A1A314B7EAD361C43736E8150 /* Pods-SwiftSticks_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE48F52F1AB6EA2F7F7BDBB89D364BF9 /* Pods-SwiftSticks_Tests-dummy.m */; };
-		4388050E69B49807E4CC35446F083BD4 /* Sticks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4EFB613A6100552A86F80915F5C26 /* Sticks.swift */; };
+		4388050E69B49807E4CC35446F083BD4 /* AnalogStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4EFB613A6100552A86F80915F5C26 /* AnalogStick.swift */; };
 		501A90F21F59CF02004055F1 /* StickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501A90F11F59CF02004055F1 /* StickView.swift */; };
 		63B9F5849B98095DC5204F20D168FB8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		68D81297FB56A5821BF4211664DCB426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -40,7 +40,7 @@
 		4B4B02E38A8C36E11EFE00363AF760E1 /* Pods-SwiftSticks_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftSticks_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		501A90F11F59CF02004055F1 /* StickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StickView.swift; path = SwiftSticks/Classes/StickView.swift; sourceTree = "<group>"; };
 		501E0BE9805C88FCC92ACC2EB92D08D2 /* Pods_SwiftSticks_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSticks_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51A4EFB613A6100552A86F80915F5C26 /* Sticks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sticks.swift; path = SwiftSticks/Classes/Sticks.swift; sourceTree = "<group>"; };
+		51A4EFB613A6100552A86F80915F5C26 /* AnalogStick.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnalogStick.swift; path = SwiftSticks/Classes/AnalogStick.swift; sourceTree = "<group>"; };
 		53B92F090A9637276563A0E1D70BB25A /* Pods-SwiftSticks_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftSticks_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5F058668EBDF8574229981FADD027E05 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FF07AB3A230753CC77AE8FAE4909DC4 /* Pods-SwiftSticks_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftSticks_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		961C711B3D49F7F87B9525577F42EA53 /* SwiftSticks */ = {
 			isa = PBXGroup;
 			children = (
-				51A4EFB613A6100552A86F80915F5C26 /* Sticks.swift */,
+				51A4EFB613A6100552A86F80915F5C26 /* AnalogStick.swift */,
 				501A90F11F59CF02004055F1 /* StickView.swift */,
 				B57FA1A2885851B006E57CB1E3802038 /* Support Files */,
 			);
@@ -337,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4388050E69B49807E4CC35446F083BD4 /* Sticks.swift in Sources */,
+				4388050E69B49807E4CC35446F083BD4 /* AnalogStick.swift in Sources */,
 				C6391658CA3B97A23DE47133E149B269 /* SwiftSticks-dummy.m in Sources */,
 				501A90F21F59CF02004055F1 /* StickView.swift in Sources */,
 			);
