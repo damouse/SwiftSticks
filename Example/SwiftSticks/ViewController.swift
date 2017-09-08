@@ -26,6 +26,16 @@ class ViewController: UIViewController {
         stickView.didMove = { (a: AnalogJoystickData) -> () in
             print(a)
         }
+        
+        stickView.startedMoving = {
+            print("Stick started moving")
+        }
+        
+        stickView.stoppedMoving = {
+            print("Stopped moving")
+        }
+        
+        
     }
     
     override var shouldAutorotate : Bool {

@@ -9,16 +9,16 @@ import SpriteKit
 
 // MARK: AnalogJoystickData
 public struct AnalogJoystickData: CustomStringConvertible {
-    public var velocity = CGPoint.zero,
-    angular = CGFloat(0)
+    public var position = CGPoint.zero,
+    angle = CGFloat(0)
     
     mutating func reset() {
-        velocity = CGPoint.zero
-        angular = 0
+        position = CGPoint.zero
+        angle = 0
     }
     
     public var description: String {
-        return "AnalogStickData(velocity: \(velocity), angular: \(angular))"
+        return "AnalogStickData(velocity: \(position), angular: \(angle))"
     }
 }
 
@@ -147,15 +147,6 @@ open class AnalogJoystick: SKNode {
         }
     }
     
-    public var radius: CGFloat {
-        get {
-            return diameter * 0.5
-        }
-        
-        set(newRadius) {
-            diameter = newRadius * 2
-        }
-    }
     
     public init(substrate: AnalogJoystickComponent, stick: AnalogJoystickComponent) {
         super.init()
@@ -214,8 +205,10 @@ open class AnalogJoystick: SKNode {
             let maxDistantion = substrate.diameter / 2
             let realDistantion = sqrt(pow(location.x, 2) + pow(location.y, 2))
             let needPosition = realDistantion <= maxDistantion ? CGPoint(x: location.x, y: location.y) : CGPoint(x: location.x / realDistantion * maxDistantion, y: location.y / realDistantion * maxDistantion)
+            
+            let readableDisplacement = CGPoint(x: needPosition.x / maxDistantion, y: needPosition.y / maxDistantion)
             stick.position = needPosition
-            data = AnalogJoystickData(velocity: needPosition, angular: -atan2(needPosition.x, needPosition.y))
+            data = AnalogJoystickData(position: readableDisplacement, angle: -atan2(needPosition.x, needPosition.y))
         }
     }
     

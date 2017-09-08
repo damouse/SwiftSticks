@@ -40,6 +40,16 @@ public class StickView: SKView {
         }
     }
     
+    public var disabled: Bool {
+        set(disabled) {
+            stick.disabled = disabled
+        }
+        get {
+            return stick.disabled
+        }
+    }
+    
+    // Customizable options
     public var isMoving: Bool {
         return stick.tracking
     }
@@ -47,6 +57,42 @@ public class StickView: SKView {
     public var data: AnalogJoystickData {
         return stick.data
         
+    }
+    
+    public var stickImage: UIImage? {
+        set(image) {
+            stick.stick.image = image
+        }
+        get {
+            return stick.stick.image
+        }
+    }
+    
+    public var baseImage: UIImage? {
+        set(image) {
+            stick.substrate.image = image
+        }
+        get {
+            return stick.substrate.image
+        }
+    }
+    
+    public var stickColor: UIColor {
+        set(color) {
+            stick.stick.color = color
+        }
+        get {
+            return stick.stick.color
+        }
+    }
+    
+    public var baseColor: UIColor {
+        set(color) {
+            stick.substrate.color = color
+        }
+        get {
+            return stick.substrate.color
+        }
     }
     
     override init(frame: CGRect) {
